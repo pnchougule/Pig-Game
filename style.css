@@ -1,0 +1,18 @@
+td{
+    align-content: center;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    align-items: center;
+    }
+
+    table, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      
+img {
+    width: 50px;
+    height: 50px;
+}
