@@ -3,7 +3,9 @@
 let random = 1;
 let sum = 0;
 let flag = true;
-
+let holdP1Score, holdP2Score;
+let p1FinalScore = 0;
+let p2FinalScore = 0;
 let btnRollDice = document.getElementById("btnRollDice");
 let diceImg = document.getElementById("dice-img");
 let currentP1Score = document.getElementById("currentP1Score");
@@ -59,13 +61,22 @@ refresh.addEventListener("click", function () {
   diceImg.src = "dice-1.png";
   currentP1Score.textContent = "0";
   currentP2Score.textContent = "0";
-  totalP1Score.textContent = "0";
-  totalP2Score.textContent = "0";
+  totalP1Score.textContent = "";
+  totalP2Score.textContent = "";
 });
 
-hold.addEventListener('click',function(){
-flag=false;
-currentP1Score=0;
-currentP2Score=0;totalP1Score;
-
-})
+hold.addEventListener("click", function () {
+  if (flag) {
+    p1FinalScore = p1FinalScore + sum;
+    sum = 0;
+    flag = false;
+    currentP1Score.textContent = "0";
+    totalP1Score.textContent = p1FinalScore;
+  } else {
+    p2FinalScore = p2FinalScore + sum;
+    sum = 0;
+    flag = true;
+    currentP2Score.textContent = "0";
+    totalP2Score.textContent = p2FinalScore;
+  }
+});
